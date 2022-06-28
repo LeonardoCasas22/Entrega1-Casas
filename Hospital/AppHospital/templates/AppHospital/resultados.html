@@ -1,0 +1,25 @@
+{% extends "AppHospital/padre.html" %}
+
+{% load static %}
+
+{% block contenidoquecambia %}
+    {% if medicos %}
+
+        <p>Estamos buscando medicos que coincidan con la especialidad: {{especialidad}} </p>
+
+        <ul>
+	    {% for medico in medicos %}
+		    
+            <li> <h4>{{medico.nombre}} {{medico.apellido}}</h4>
+             <h4>{{medico.especialidad}}</h4> </li>
+		
+	    {% endfor %}
+
+        </ul>
+    
+    {% else %}
+    <h4>{{respuesta}}</h4>
+    {% endif %}
+
+{% endblock %}
+
